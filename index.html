@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page design with dynamic images</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="navbar">
+            <img src="/image/logo.png" class="logo">
+            <div class="user">
+                <button type="button">Explore</button>
+                <img src="/image/user.png">
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="info">
+                <h1>DISCOVER</h1>
+                <p>Strength is Life, Weakness is Death. Expansion is Life, Contraction is Death. Love is Life, Hatred is Death.</p>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="slider">
+            <img src="/image/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="/image/small1.png" class="active thumbnail">
+                <img src="/image/small2.png" class="thumbnail">
+                <img src="/image/small3.png" class="thumbnail">
+                <img src="/image/small4.png" class="thumbnail">
+                <img src="/image/small5.png" class="thumbnail">
+
+            </div>
+            <img src="/image/right-arrow.png" id="next">
+        </div>
+
+    </div>
+
+
+    <script>
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var thumbnail = document.getElementsById("thumbnail");
+        var hero = document.getElementById("hero");
+
+        var backgroundImage = new Array(
+            "/image/bg1.png",
+            "/image/bg2.png",
+            "/image/bg3.png",
+            "/image/bg4.png",
+            "/image/bg5.png",
+
+
+        );
+        let i = 0;
+        next.onclick = function() {
+            if (i < 4) {
+                body.style.backgroundImage = 'url("' + backgroundImg[i + 1] + '")';
+                thumbnail[i + 1].classList.add("active");
+                thumbnail[i + 1].classList.remove("active");
+                i++;
+            }
+        }
+        prev.onclick = function() {
+            if (i > 0) {
+                body.style.backgroundImage = 'url("' + backgroundImg[i - 1] + '")';
+                thumbnail[i].classList.remove("active");
+                i--;
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
